@@ -34,7 +34,9 @@
         <pkg.package.phase>none</pkg.package.phase>
         <pkg.user>thingsboard</pkg.user>
         <pkg.implementationTitle>${project.name}</pkg.implementationTitle>
+        <!--suppress UnresolvedMavenProperty -->
         <pkg.unixLogFolder>/var/log/${pkg.name}</pkg.unixLogFolder>
+        <!--suppress UnresolvedMavenProperty -->
         <pkg.installFolder>/usr/share/${pkg.name}</pkg.installFolder>
         <javax-annotation.version>1.3.2</javax-annotation.version>
         <jakarta.xml.bind-api.version>2.3.2</jakarta.xml.bind-api.version>
@@ -78,7 +80,7 @@
         <protobuf.version>3.21.9</protobuf.version>
         <grpc.version>1.42.1</grpc.version>
         <tbel.version>1.0.3</tbel.version>
-        <lombok.version>1.18.18</lombok.version>
+        <lombok.version>1.18.20</lombok.version>
         <paho.client.version>1.2.4</paho.client.version>
         <netty.version>4.1.75.Final</netty.version>
         <netty-tcnative.version>2.0.51.Final</netty-tcnative.version>
@@ -144,6 +146,7 @@
         <jgit.version>6.1.0.202203080745-r</jgit.version>
         <exp4j.version>0.4.8</exp4j.version>
         <aerogear-otp.version>1.0.0</aerogear-otp.version>
+        <pulsar.version>2.10.2</pulsar.version>
     </properties>
 
     <modules>
@@ -201,6 +204,7 @@
                                                 <directory>src/main/resources</directory>
                                                 <excludes>
                                                     <exclude>logback.xml</exclude>
+                                                    <!--suppress UnresolvedMavenProperty -->
                                                     <exclude>${pkg.name}.yml</exclude>
                                                 </excludes>
                                                 <filtering>false</filtering>
@@ -208,6 +212,7 @@
                                             <resource>
                                                 <directory>src/main/resources</directory>
                                                 <includes>
+                                                    <!--suppress UnresolvedMavenProperty -->
                                                     <include>${pkg.name}.yml</include>
                                                 </includes>
                                                 <filtering>true</filtering>
@@ -230,6 +235,7 @@
                                             </resource>
                                         </resources>
                                         <filters>
+                                            <!--suppress UnresolvedMavenProperty -->
                                             <filter>${main.dir}/packaging/${pkg.type}/filters/unix.properties</filter>
                                         </filters>
                                     </configuration>
@@ -249,6 +255,7 @@
                                             </resource>
                                         </resources>
                                         <filters>
+                                            <!--suppress UnresolvedMavenProperty -->
                                             <filter>${main.dir}/packaging/${pkg.type}/filters/unix.properties</filter>
                                         </filters>
                                     </configuration>
@@ -263,11 +270,13 @@
                                         <outputDirectory>${pkg.linux.dist}/init</outputDirectory>
                                         <resources>
                                             <resource>
+                                                <!--suppress UnresolvedMavenProperty -->
                                                 <directory>${main.dir}/packaging/${pkg.type}/scripts/init</directory>
                                                 <filtering>true</filtering>
                                             </resource>
                                         </resources>
                                         <filters>
+                                            <!--suppress UnresolvedMavenProperty -->
                                             <filter>${main.dir}/packaging/${pkg.type}/filters/unix.properties</filter>
                                         </filters>
                                     </configuration>
@@ -285,6 +294,7 @@
                                                 <directory>src/main/resources</directory>
                                                 <excludes>
                                                     <exclude>logback.xml</exclude>
+                                                    <!--suppress UnresolvedMavenProperty -->
                                                     <exclude>${pkg.name}.yml</exclude>
                                                 </excludes>
                                                 <filtering>false</filtering>
@@ -292,6 +302,7 @@
                                             <resource>
                                                 <directory>src/main/resources</directory>
                                                 <includes>
+                                                    <!--suppress UnresolvedMavenProperty -->
                                                     <include>${pkg.name}.yml</include>
                                                 </includes>
                                                 <filtering>true</filtering>
@@ -299,12 +310,14 @@
                                             <resource>
                                                 <directory>src/main/conf</directory>
                                                 <excludes>
+                                                    <!--suppress UnresolvedMavenProperty -->
                                                     <exclude>${pkg.name}.conf</exclude>
                                                 </excludes>
                                                 <filtering>true</filtering>
                                             </resource>
                                         </resources>
                                         <filters>
+                                            <!--suppress UnresolvedMavenProperty -->
                                             <filter>${main.dir}/packaging/${pkg.type}/filters/windows.properties
                                             </filter>
                                         </filters>
@@ -320,11 +333,13 @@
                                         <outputDirectory>${project.build.directory}/control</outputDirectory>
                                         <resources>
                                             <resource>
+                                                <!--suppress UnresolvedMavenProperty -->
                                                 <directory>${main.dir}/packaging/${pkg.type}/scripts/control</directory>
                                                 <filtering>true</filtering>
                                             </resource>
                                         </resources>
                                         <filters>
+                                            <!--suppress UnresolvedMavenProperty -->
                                             <filter>${main.dir}/packaging/${pkg.type}/filters/unix.properties</filter>
                                         </filters>
                                     </configuration>
@@ -339,6 +354,7 @@
                                         <outputDirectory>${project.build.directory}/bin/install</outputDirectory>
                                         <resources>
                                             <resource>
+                                                <!--suppress UnresolvedMavenProperty -->
                                                 <directory>${main.dir}/packaging/${pkg.type}/scripts/install</directory>
                                                 <includes>
                                                     <include>**/*.sh</include>
@@ -348,6 +364,7 @@
                                             </resource>
                                         </resources>
                                         <filters>
+                                            <!--suppress UnresolvedMavenProperty -->
                                             <filter>${main.dir}/packaging/${pkg.type}/filters/unix.properties</filter>
                                         </filters>
                                     </configuration>
@@ -362,11 +379,13 @@
                                         <outputDirectory>${pkg.win.dist}</outputDirectory>
                                         <resources>
                                             <resource>
+                                                <!--suppress UnresolvedMavenProperty -->
                                                 <directory>${main.dir}/packaging/${pkg.type}/scripts/windows</directory>
                                                 <filtering>true</filtering>
                                             </resource>
                                         </resources>
                                         <filters>
+                                            <!--suppress UnresolvedMavenProperty -->
                                             <filter>${main.dir}/packaging/${pkg.type}/filters/windows.properties
                                             </filter>
                                         </filters>
@@ -382,6 +401,7 @@
                                         <outputDirectory>${pkg.win.dist}/install</outputDirectory>
                                         <resources>
                                             <resource>
+                                                <!--suppress UnresolvedMavenProperty -->
                                                 <directory>${main.dir}/packaging/${pkg.type}/scripts/install</directory>
                                                 <includes>
                                                     <include>logback.xml</include>
@@ -390,6 +410,7 @@
                                             </resource>
                                         </resources>
                                         <filters>
+                                            <!--suppress UnresolvedMavenProperty -->
                                             <filter>${main.dir}/packaging/${pkg.type}/filters/windows.properties
                                             </filter>
                                         </filters>
@@ -481,6 +502,7 @@
                             <artifactId>spring-boot-maven-plugin</artifactId>
                             <configuration>
                                 <skip>${pkg.disabled}</skip>
+                                <!--suppress UnresolvedMavenProperty -->
                                 <mainClass>${pkg.mainClass}</mainClass>
                                 <classifier>boot</classifier>
                                 <layout>ZIP</layout>
@@ -489,7 +511,9 @@
                                 <embeddedLaunchScriptProperties>
                                     <confFolder>${pkg.installFolder}/conf</confFolder>
                                     <logFolder>${pkg.unixLogFolder}</logFolder>
+                                    <!--suppress UnresolvedMavenProperty -->
                                     <logFilename>${pkg.name}.out</logFilename>
+                                    <!--suppress UnresolvedMavenProperty -->
                                     <initInfoProvides>${pkg.name}</initInfoProvides>
                                 </embeddedLaunchScriptProperties>
                             </configuration>
@@ -519,9 +543,11 @@
                                     <arg>
                                         -PmainJar=${project.build.directory}/${project.build.finalName}-boot.${project.packaging}
                                     </arg>
+                                    <!--suppress UnresolvedMavenProperty -->
                                     <arg>-PpkgName=${pkg.name}</arg>
                                     <arg>-PpkgUser=${pkg.user}</arg>
                                     <arg>-PpkgInstallFolder=${pkg.installFolder}</arg>
+                                    <!--suppress UnresolvedMavenProperty -->
                                     <arg>-PpkgCopyInstallScripts=${pkg.copyInstallScripts}</arg>
                                     <arg>-PpkgLogFolder=${pkg.unixLogFolder}</arg>
                                     <arg>--warning-mode</arg>
@@ -541,8 +567,10 @@
                             <groupId>org.apache.maven.plugins</groupId>
                             <artifactId>maven-assembly-plugin</artifactId>
                             <configuration>
+                                <!--suppress UnresolvedMavenProperty -->
                                 <finalName>${pkg.name}</finalName>
                                 <descriptors>
+                                    <!--suppress UnresolvedMavenProperty -->
                                     <descriptor>${main.dir}/packaging/${pkg.type}/assembly/windows.xml</descriptor>
                                 </descriptors>
                             </configuration>
@@ -1959,6 +1987,16 @@
                 <groupId>net.objecthunter</groupId>
                 <artifactId>exp4j</artifactId>
                 <version>${exp4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.pulsar</groupId>
+                <artifactId>pulsar-client</artifactId>
+                <version>${pulsar.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.pulsar</groupId>
+                <artifactId>pulsar-client-admin</artifactId>
+                <version>${pulsar.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
